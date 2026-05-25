@@ -26,8 +26,15 @@ print(test_list)
 # Question: Why do you want to shuffle the samples in the train and test datasets?
 
 
+# Task 2.3
 
+In the case where we only make use of the channels r, g, and b and drop the NIR channel, the overall classification accuracy is slightly going down. The classifier achieve roughly 4 % less accuracy than before. When taking a closer look at the specific per-class accuracies it can be observed that a overall decrease in accuracy is not the case for all classes. More interesting, the accuracy on the classes road and water is even rising in a comparable amount as it is decreasing for the other classes. 
 
+# Task 2.4
+
+In this second case where we only make use of the channels r, g, and nir and drop the b channel, the overall classification accuracy is slightly below our baseline. The classifier is roughly 1-2 % less accurate than before. Like in the first case, when taking a closer look at the specific per-class accuracies, it can be observed that a overall decrease in accuracy is not the case for all classes. Especially regarding the accuracy on the class water, we (nearly) achieve perfect accuracy. 
+
+# Task 2.5 
 
 ## Author
 
