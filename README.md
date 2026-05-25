@@ -21,10 +21,12 @@ print(test_list)
 
 # Question: What is wrong with the above code?
 
+The problem with the code is that it is possible that one sample is present in both, the training as well as the test set. Thereby, our model might already know the (some) data of the test set and thus perform better. This would induce data leakage as we have directly "corrupted" that data as valid data set. We can not assure that the test set performance is a reliable measurement of generalisation of our model. 
 
 
 # Question: Why do you want to shuffle the samples in the train and test datasets?
 
+We simply just want to make sure that the model is not learning anything from the order of the data/samples. Maybe all samples of one class are grouped together or we have spatial ordering which could potential lead to biased training and thereby unreliable evalution of the models performance. Shuffle the samples prevents this issues and thus results in better generalization.
 
 # Task 2.3
 
