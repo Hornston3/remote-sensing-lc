@@ -1,34 +1,35 @@
-# Remote sensing for landcover detection: ML techniques
+# Question: What would you need to do to extract only the green and the infrared channel from this data?
 
-This repository contain course material for the MLESS lecture by Prof. Dr. Martin Schultz at the University of Cologne, Germany.
-Two Jupyter notebooks demonstrate the use of random forests and convolutional neural networks for a simplified landcover classification task
-based on satellite remote sensing data.
+Each 28 x 28 = 784 values of a row represent one channel. Assuming that green is the second channel, we would need to only keep or pick the columns 783 to 1567 of the data frame to extract the green channel. Note that we have to shift by one as data frame indices start by 0 instead of 1. The same applies for the infrared channel, we are assuming to be the last one. Here we would need to pick the columns 2351 up to 3134. 
 
-The data for these demonstrations is a subset from the [SAT-6](https://csc.lsu.edu/~saikat/deepsat/) dataset by
-_Saikat Basu, Sangram Ganguly, Supratik Mukhopadhyay, Robert Dibiano, Manohar Karki and Ramakrishna Nemani, DeepSat - A Learning framework for Satellite Imagery, ACM SIGSPATIAL 2015._
-It consists of 28x28 pixels uint8 images with 4 channels and labels of 6 landcover classes - barren land, trees, grassland, roads, buildings and water bodies.
+# Question: What is the advantage of this encoding compared to a simple class label like '0', '1', '2', '3', '4', '5', or text labels like 'building', 'barren_land', ...?
 
-The classification task is scene classification, i.e. the entire 28x28 pixel image is classified a sone landcover type.
+Some ML algorithms require that all features are in a numerical format and can directly process a label like 'building'. Thereby, we need a way of converting categorical data. This could be done by simply encode it as an integer. This results in a certain degree of order, which may not be desirable or may even be detrimental to machine learning. For categorical variables where no such ordinal relationship exists, a one-hot encoding can be applied that does not imply any form of ordinal structure or distance between two categories.
 
-## Download the data
+# Question: Why use extend here and append above?
 
-Unfortunately, there is no anonymous and free access to the Deepsat data. However, a subset has been extracted and made available atthe B2SHARE server at FZ Jülich: 
-https://b2share.eudat.eu/records/89654eac10724d30a6c7e51f2c5422de. Thi scomprises only the test set of the original data - for our educational experiments, this is sufficient.
+The key difference between both methods is that extend() adds all elements of a list individually to a list, while append() adds the whole list as a single element into the list. 
 
-The three data files must be stored in a `data` directory in the same path as the notebook itself.
+test_list.extend([5, 8, 12])
+print(test_list)
+[5, 8, 12]
 
-## Run the example notebooks
+test_list.append([5, 8, 12])
+print(test_list)
+[[5, 8, 12]]
 
-Start with the Random_forest_classifier notebook. WARNING: loading the data into pandas consumes ~5 GBytes of memory. Make sure that your Jupyter lab has sufficient memory.
 
-Once you fully understood what this notebook does, take a look at the CNN_classifier notebook and run it. Note that you need to have Pytorch installed to run the CNN_classifier notebook.
+# Question: What is wrong with the above code?
 
-Compare training times, inference times (if you notice a difference) and the quality of the results.
 
-Think about the network and training paraneters: which ones would you modify if you want to improve the results?
+
+# Question: Why do you want to shuffle the samples in the train and test datasets?
+
+
+
 
 
 ## Author
 
-Martin Schultz, April 2026
+Nils Hornstein
 
