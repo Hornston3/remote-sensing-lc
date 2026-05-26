@@ -1,4 +1,4 @@
-# Question Ctalogue from the RF Classifier Notebook
+# Question Catalogue from the RF Classifier Notebook
 
 ## Question: What would you need to do to extract only the green and the infrared channel from this data?
 
@@ -23,7 +23,21 @@ print(test_list)
 
 ## Question: What is wrong with the above code?
 
-The problem with the code is that it is possible that one sample is present in both, the training as well as the test set. Thereby, our model might already know the (some) data of the test set and thus perform better. This would induce data leakage as we have directly "corrupted" that data as valid data set. We can not assure that the test set performance is a reliable measurement of generalisation of our model. 
+```
+num_train = 1000
+num_test = 100
+train_idx = []
+test_idx = []
+for column in column_names:
+    # find all indices of a given class
+    class_idx = labels_df[column] == 1
+    # randomly select num_train and num_test values from this index list - make sure to avoid duplicates
+    train_idx.extend(np.random.choice(np.where(class_idx.values)[0], size=num_train, replace=False).tolist())
+    test_idx.extend(np.random.choice(np.where(class_idx.values)[0], size=num_test, replace=False).tolist())
+print(f'number of train indices: {len(train_idx)}, number of test indices: {len(test_idx)}')
+```
+
+The problem with the code is that it is possible that one sample is present in both, the training as well as the test set. Thereby, our model potentially already know (some) data of the testset and thus perform better. This would induce data leakage as we have directly "corrupted" that data as valid dataset. We can not assure that the testset performance is a reliable measurement of generalisation of our model.
 
 
 ## Question: Why do you want to shuffle the samples in the train and test datasets?
