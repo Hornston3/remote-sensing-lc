@@ -40,6 +40,12 @@ In this second case where we only make use of the channels r, g, and nir and dro
 
 For this task I picked the max_depth as hyperparameter. This denotes to the maximal depth of the tree and can be roughly described as the complexity of a tree. As default, the max_depth is set to None which result in a tree where all leaves are either pure or contrain less than min_samples_split samples (). In terms of expected behaviour when changing this hyperparameter with e.g. increasing depth, I assume that we will observe a rise in accuracy in the beginning. At some point, the classifier will reach a peak accuracy and will ongoing decrease due to under- and overfitting. Underfitting describes the phenomenon when we have an excessively simplistic formulation of the model. On the other hand, overfitting occurs when we have an excessively flexible and complex formulation. In this case, the model is more like memorizing the training data (including noise) and generalizes bad to the new unseen test data.
 
+# Task 3.2
+
+# Task 3.3
+
+# Task 3.4
+
 ## Author
 
 Nils Hornstein
