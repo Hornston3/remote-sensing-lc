@@ -1,5 +1,7 @@
 # Question Catalogue from the RF Classifier Notebook
 
+In this section, the answers for questions from the random forest classifier notebook are given. 
+
 ## Question: What would you need to do to extract only the green and the infrared channel from this data?
 
 Each 28 x 28 = 784 values of a row represent one channel. Assuming that green is the second channel, we would need to only keep or pick the columns 783 to 1567 of the data frame to extract the green channel. Note that we have to shift by one as data frame indices start by 0 instead of 1. The same applies for the infrared channel, we are assuming to be the last one. Here we would need to pick the columns 2351 up to 3134. 
@@ -37,7 +39,8 @@ for column in column_names:
 print(f'number of train indices: {len(train_idx)}, number of test indices: {len(test_idx)}')
 ```
 
-The problem with the code is that it is possible that one sample is present in both, the training as well as the test set. Thereby, our model potentially already know (some) data of the testset and thus perform better. This would induce data leakage as we have directly "corrupted" that data as valid dataset. We can not assure that the testset performance is a reliable measurement of generalisation of our model.
+The problem with the code is that it is possible that one sample is present in both, the training as well as the test set. Thereby, our model potentially already know (some) data of the testset and thus perform better. 
+This would induce data leakage as we have directly "corrupted" that data as valid dataset. We can not assure that the testset performance is a reliable measurement of generalisation of our model.
 
 
 ## Question: Why do you want to shuffle the samples in the train and test datasets?
@@ -45,6 +48,8 @@ The problem with the code is that it is possible that one sample is present in b
 We simply just want to make sure that the model is not learning anything from the order of the data/samples. Maybe all samples of one class are grouped together or we have spatial ordering which could potential lead to biased training and thereby unreliable evalution of the models performance. Shuffle the samples prevents this issues and thus results in better generalization.
 
 # RF Classifier Tasks
+
+In the following section, additional information and demanded answers regarding the tasks are given.  
 
 ## Task 2.3 - How does the modification of using only RGB channels affect the classification accuracy?
 
