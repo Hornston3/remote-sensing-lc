@@ -1,3 +1,7 @@
+# Manual
+
+To run both notebooks, no further modules have to be installed away from the ones that were already given. Just run all cells in their given order. 
+
 # Question Catalogue from the RF Classifier Notebook
 
 In this section, the answers for the questions from the random forest classifier notebook are given. 
