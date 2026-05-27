@@ -87,9 +87,11 @@ The results are very similar to the ones with the random forest classifier. It c
 
 ## Task 3.4 - Justify your choice of the hyper parameter and of the new value. What is your expectation? Will the classification accuracy increase or decrease? Will the model become more robust or less robust? Implement the change and document your results. Do the results agree with your expectation?
 
-For this task, I have chosen the number of epochs as hyper parameter of the training that I want to modify. The number of epochs refers to the number of complete passes through the training dataset during the training of the CNN. In simple words, this means how long our CNN classifier is learning.  
+For this task, I have chosen the number of epochs as hyperparameter of the training that I want to modify. The number of epochs refers to the number of complete passes through the training dataset during the training of the CNN classifier. In simple words, this means how long our CNN classifier is learning on the given data.  
 
-This leads to the expectation that the accuracy of the CNN classifier will improve as the number of epochs increases. In particular, the training loss should decrease. As was the case with task 2.5 on the RF classifier, this potentially lead to overfitting and the classifier learning the train data instead of the underlying patttern we actually want to learn. Thus resulting in worse performance on the testset and bda generalisation capabilities.   
+This leads to the expectation that the accuracy of the CNN classifier will improve as the number of epochs increases. In particular, the training loss should decrease and the accuracy should improve. As it was the case within task 2.5 on the RF classifier, this potentially lead to overfitting and the classifier learning the training data instead of the underlying pattern we actually want to learn. Thus resulting in worse performance on the testset and bda generalisation capabilities.
+
+When implemented the modifications and execute the code, the exact same behaviour as expected can be observed. As with the randomforest classifier, the first increment steps of the hyperparameter have the biggest impact on the accuracy while it gradually diminishes. But in this case the expected overfitting is not that present.  
 
 ## Author
 
