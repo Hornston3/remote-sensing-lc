@@ -90,7 +90,7 @@ Lastly, we drop the NIR channel as Matplotlib can only work with the RGB channel
 
 ## Task 3.3 - How do the results degrade? Is the effect smaller or larger than with the random forest?
 
-The results are very similar to the ones with the random forest classifier. It can be observed that the overall accuracy of the CNN classifier is decreasing around roughly 3-4 %. When taking a closer look on the per-class accuracies, there are some classes where the class accuracy went down, e.g. in barren_land, trees, and road. On the other hand, in the classes building and grassland it even went up. This behaviour of improvements in ceratin per-class accuracies was also observable with the random forest classifiers. What indeed differs is which per-class accuracies are dropping or rising by the usage of only RGB channels. For completeness, the per-class accuracy of water remained the same with the CNN classifier while it had an improvement with random forest. 
+The results are very similar to the ones with the random forest classifier. It can be observed that the overall accuracy of the CNN classifier is decreasing slightly. When taking a closer look on the per-class accuracies, there are some classes where the class accuracy went down, e.g. in buildings, barren_land, and trees. On the other hand, in the classes road and grassland it even went up. This behaviour of improvements in ceratin per-class accuracies was also observable with the random forest classifiers. What indeed differs is which per-class accuracies are dropping or rising by the usage of only RGB channels. For completeness, the per-class accuracy of water remained the same with the CNN classifier while it had an improvement with random forest. 
 
 ## Task 3.4 - Justify your choice of the hyper parameter and of the new value. What is your expectation? Will the classification accuracy increase or decrease? Will the model become more robust or less robust? Implement the change and document your results. Do the results agree with your expectation?
 
@@ -98,7 +98,7 @@ For this task, I have chosen the number of epochs as hyperparameter of the train
 
 This leads to the expectation that the accuracy of the CNN classifier will improve as the number of epochs increases. In particular, the training loss should decrease and the accuracy should improve. As it was the case within task 2.5 on the RF classifier, this potentially lead to overfitting and the classifier learning the training data instead of the underlying pattern we actually want to learn. Thus resulting in worse performance on the testset and bda generalisation capabilities.
 
-When implemented the modifications and execute the code, the exact same behaviour as expected can be observed. As with the randomforest classifier, the first increment steps of the hyperparameter have the biggest impact on the accuracy while it gradually diminishes. But in this case the expected overfitting is not that present.  
+When implemented the modifications and execute the code, the exact same behaviour as expected can be observed. As with the randomforest classifier, the first increment steps of the hyperparameter have the biggest impact on the accuracy while it gradually diminishes. But in this case the expected overfitting is not that present. Further, it can also be observed that the per-class accuracy is imporving relatively equal among all classes. There is not a single class where the per-classs accuracy is below the baseline we have seen from the first trained CNN in this notebook.
 
 ## Author
 
