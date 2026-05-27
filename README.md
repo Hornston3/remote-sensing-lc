@@ -79,7 +79,9 @@ When the changes are implemented, the behaviour observed is exactly as expected.
 
 ## Task 3.2 - Document what you need to change from task 2.2.
 
+While the structure of both code to evaluate the performance of the classifiers is relatively similar, there are some key differences. 
 
+Starting of the format of the prediction we get from the different classifier. In case of the RF, we get 2-dimensional list that stores the one-hot encoded class prediction. On the other hand, the CNN gives us the predicted labels for each batch as integer from 0 to 5 stored in one array.  
 
 ## Task 3.3 - How do the results degrade? Is the effect smaller or larger than with the random forest?
 
