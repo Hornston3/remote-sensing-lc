@@ -4,7 +4,7 @@ To run both notebooks, no further modules have to be installed away from the one
 
 # Question Catalogue from the RF Classifier Notebook
 
-In this section, the answers for the questions from the random forest classifier notebook are given. 
+In this section, the answers for the questions from the random forest (later often referred to as RF) classifier notebook are given. 
 
 ## Question: What would you need to do to extract only the green and the infrared channel from this data?
 
